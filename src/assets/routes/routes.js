@@ -1,22 +1,17 @@
 import { lazy } from "react";
-
+// eslint-disable-next-line
 export default [
   {
     path: "/",
     label: "MainPage",
     exact: true,
     component: lazy(() => import("../../pages/MainPage/MainPage")),
-    // restricted: false,
-    // private: false,
   },
   {
     path: "/search",
     label: "SearchPage",
     exact: true,
     component: lazy(() => import("../../pages/SearchPage/SearchPage")),
-
-    // restricted: false,
-    // private: false,
   },
   {
     path: "/artist/:id",

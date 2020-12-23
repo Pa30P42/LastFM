@@ -2,4 +2,4 @@ const topMusicChart = (state) => {
   return state.topList;
 };
 
-export default { topMusicChart };
+export default topMusicChart;

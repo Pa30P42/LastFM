@@ -14,8 +14,10 @@ const getArtistInfoError = (error) => ({
   payload: error,
 });
 
-export default {
+const artistInfoActions = {
   getArtistInfoRequest,
   getArtistInfoSuccess,
   getArtistInfoError,
 };
+
+export default artistInfoActions;

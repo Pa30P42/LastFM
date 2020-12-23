@@ -14,8 +14,10 @@ const getTopListError = (error) => ({
   payload: error,
 });
 
-export default {
+const topListActions = {
   getTopListRequest,
   getTopListSuccess,
   getTopListError,
 };
+
+export default topListActions;

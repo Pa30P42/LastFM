@@ -10,13 +10,15 @@ const ArtistPage = () => {
   const dispatch = useDispatch();
   const info = useSelector(artistInfo);
 
-  let id;
-
-  useEffect(async () => {
+  useEffect(() => {
+    let id;
     id = location.pathname.split("/")[2];
-    dispatch(await getArtistInfo(id));
-    console.log("id", id);
-  }, [id]);
+    async function fetchData() {
+      dispatch(await getArtistInfo(id));
+    }
+    fetchData();
+    // eslint-disable-next-line
+  }, []);
 
   const { name, image, tags, bio } = info;
   return (

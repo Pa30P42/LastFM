@@ -3,15 +3,15 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
 import Track from "../../components/Track/Track";
-
 import getTopList from "../../redux/operations/topListOperations";
-import topListSelectors from "../../redux/selectiors/topListSelectors";
+import topMusicChart from "../../redux/selectiors/topListSelectors";
 
 const MainPage = () => {
-  const chartList = useSelector(topListSelectors.topMusicChart);
+  const chartList = useSelector(topMusicChart);
   const dispatch = useDispatch();
-  useEffect(async () => {
-    dispatch(await getTopList(1));
+  useEffect(() => {
+    dispatch(getTopList(1));
+    // eslint-disable-next-line
   }, []);
 
   return (
