@@ -1,0 +1,13 @@
+import topListConstants from "../constants/topListConstants";
+
+const topListReduces = (state = [], { type, payload }) => {
+  switch (type) {
+    case topListConstants.GET_TOPLIST_SUCCESS:
+      return payload;
+
+    default:
+      return state;
+  }
+};
+
+export default topListReduces;
