@@ -7,7 +7,12 @@ const Track = ({ track }) => {
   return (
     <li>
       <h3> {name}</h3>
-      <Link id={artist.mbid} to={`/artist/${artist.mbid}`}>
+      <Link
+        id={artist.mbid}
+        to={{
+          pathname: `/artist/${artist.mbid}`,
+        }}
+      >
         {artist.name}
       </Link>
       <div>

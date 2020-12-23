@@ -19,8 +19,15 @@ export default [
     // private: false,
   },
   {
-    path: "/artist",
+    path: "/artist/:id",
     label: "ArtistInfoPage",
     exact: true,
+    component: lazy(() => import("../../pages/ArtistPage/ArtistPage")),
+  },
+  {
+    path: "/artist/",
+    label: "ArtistNotFound",
+    exact: true,
+    component: lazy(() => import("../../pages/ArtistPage/ArtistNotFound")),
   },
 ];
