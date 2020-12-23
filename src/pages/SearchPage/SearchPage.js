@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
+import styled from "styled-components";
 import { v4 as uuidv4 } from "uuid";
 import SearchTrack from "../../components/SearchTrack/SearchTrack";
 import getSearchTracks from "../../redux/operations/searchOperations";
@@ -15,7 +16,9 @@ const SearchPage = () => {
 
   useEffect(() => {
     const query = history.location.search.split("=")[1];
+    // console.log("query", query);
     query && dispatch(getSearchTracks(query));
+
     // eslint-disable-next-line
   }, [history, location]);
 

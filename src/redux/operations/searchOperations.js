@@ -6,7 +6,7 @@ const getSearchTracks = (query) => async (dispatch) => {
 
   try {
     const res = await axios.get(
-      `http://ws.audioscrobbler.com/2.0/?method=track.search&track=${query}&limit=10&api_key=d658c82874e65111992e0e51af4dbb6f&format=json`
+      `http://ws.audioscrobbler.com/2.0/?method=track.search&track=${query}&limit=20&api_key=d658c82874e65111992e0e51af4dbb6f&format=json`
     );
 
     dispatch(

@@ -6,21 +6,26 @@ import Navigation from "./components/Navigation/Navigation";
 
 function App() {
   return (
-    <Wrapper>
-      <Suspense fallback={<h1>...loading</h1>}>
+    <Suspense fallback={<h1>...loading</h1>}>
+      <BackgroundWrapper>
         <Navigation />
-
-        <Switch>
-          {routes.map((route) => (
-            <Route key={route.label} {...route} />
-          ))}
-        </Switch>
-      </Suspense>
-    </Wrapper>
+        <Wrapper>
+          <Switch>
+            {routes.map((route) => (
+              <Route key={route.label} {...route} />
+            ))}
+          </Switch>
+        </Wrapper>
+      </BackgroundWrapper>
+    </Suspense>
   );
 }
 
 export default App;
+
+const BackgroundWrapper = styled.div`
+  background-color: #f0f5ff;
+`;
 
 const Wrapper = styled.div`
   width: 750px;

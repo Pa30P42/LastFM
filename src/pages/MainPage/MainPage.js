@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
+import styled from "styled-components";
 import { v4 as uuidv4 } from "uuid";
 import Track from "../../components/Track/Track";
 import getTopList from "../../redux/operations/topListOperations";
@@ -15,12 +16,17 @@ const MainPage = () => {
   }, []);
 
   return (
-    <ul>
+    <List>
       {chartList.map((track) => (
         <Track track={track} key={uuidv4()} />
       ))}
-    </ul>
+    </List>
   );
 };
-
 export default MainPage;
+
+const List = styled.ul`
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+`;
