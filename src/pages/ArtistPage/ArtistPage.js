@@ -1,10 +1,5 @@
-import React, { useEffect } from "react";
-
-import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useLocation } from "react-router-dom";
+import React from "react";
 import { v4 as uuidv4 } from "uuid";
-import getArtistInfo from "../../redux/operations/artistInfoOperations";
-import artistInfo from "../../redux/selectiors/artistInfoSelector";
 import {
   Button,
   Title,
@@ -14,26 +9,10 @@ import {
   Tag,
   Content,
 } from "./artistPageStyled";
+import useArtis from "./hooks/useArtist";
 
 const ArtistPage = () => {
-  const location = useLocation();
-  const history = useHistory();
-  const dispatch = useDispatch();
-  const info = useSelector(artistInfo);
-
-  const goBackFn = () => {
-    history.push("/");
-  };
-
-  useEffect(() => {
-    let id;
-    id = location.pathname.split("/")[2];
-    async function fetchData() {
-      dispatch(await getArtistInfo(id));
-    }
-    fetchData();
-    // eslint-disable-next-line
-  }, []);
+  const { info, goBackFn } = useArtis();
 
   const { name, image, tags, bio } = info;
   return (

@@ -1,28 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-
+import React from "react";
 import { v4 as uuidv4 } from "uuid";
 import Track from "../../components/Track/Track";
-import getTopList from "../../redux/operations/topListOperations";
-import topMusicChart from "../../redux/selectiors/topListSelectors";
+import useMain from "./hooks/useMainPage";
 import { Button, List } from "./mainPageStyled";
 
 const MainPage = () => {
-  const [page, setPage] = useState(1);
-  const chartList = useSelector(topMusicChart);
-  const dispatch = useDispatch();
-
-  const loadMore = () => {
-    setPage(page + 1);
-  };
-  useEffect(() => {
-    if (page === 1 && chartList.length > 0) {
-      return;
-    }
-    dispatch(getTopList(page));
-    // eslint-disable-next-line
-  }, [dispatch, page]);
+  const { loadMore, chartList } = useMain();
 
   return (
     <>
