@@ -14,10 +14,15 @@ const getSearchTracksError = (error) => ({
   payload: error,
 });
 
+const deleteSearchList = () => ({
+  type: searchConstants.DELETE_SEARCHLIST,
+});
+
 const searchActions = {
   getSearchTracksRequest,
   getSearchTracksSuccess,
   getSearchTracksError,
+  deleteSearchList,
 };
 
 export default searchActions;
