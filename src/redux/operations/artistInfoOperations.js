@@ -6,7 +6,7 @@ const getArtistInfo = (id) => async (dispatch) => {
 
   try {
     const res = await axios.get(
-      `http://ws.audioscrobbler.com//2.0/?method=artist.getinfo&mbid=${id}&api_key=d658c82874e65111992e0e51af4dbb6f&format=json`
+      `https://ws.audioscrobbler.com//2.0/?method=artist.getinfo&mbid=${id}&api_key=d658c82874e65111992e0e51af4dbb6f&format=json`
     );
 
     dispatch(artistInfoActions.getArtistInfoSuccess(res.data.artist));
